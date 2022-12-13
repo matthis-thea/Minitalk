@@ -18,4 +18,7 @@ int main(void)
 	printf("Voici le PID du serveur %d\n", pid);
 	signal(SIGUSR1 ,&affichage);
 	signal(SIGUSR2, &affichage);
+	while (1)
+		pause();
+	return (0);
 }
