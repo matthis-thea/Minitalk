@@ -6,14 +6,12 @@
 /*   By: mthea <mthea@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 11:16:42 by mthea             #+#    #+#             */
-/*   Updated: 2022/12/16 09:55:45 by mthea            ###   ########.fr       */
+/*   Updated: 2022/12/16 10:43:19 by mthea            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <signal.h>
-#include <stdlib.h>
 #include <unistd.h>
-#include <stdio.h>
 #include "../ft_printf/ft_printf.h"
 
 int	ft_atoi(char *thestring)
@@ -45,9 +43,9 @@ int	ft_atoi(char *thestring)
 	return (valeur);
 }
 
-void descaling_char(int pid, char c)
+void	ft_descaling_char(int pid, char c)
 {
-	int i;
+	int	i;
 
 	i = 7;
 	while (i >= 0)
@@ -57,12 +55,12 @@ void descaling_char(int pid, char c)
 		else
 			kill(pid, SIGUSR2);
 		usleep(100);
-    	i--;
+		i--;
 	}
 }
-int main(int argc, char **argv)
+
+int	main(int argc, char **argv)
 {
-	(void)	argc;
 	int		pid;
 	int		i;
 
@@ -72,7 +70,7 @@ int main(int argc, char **argv)
 		pid = ft_atoi(argv[1]);
 		while (argv[2][i] != '\0')
 		{
-			descaling_char(pid, argv[2][i]);
+			ft_descaling_char(pid, argv[2][i]);
 			i++;
 		}
 	}
@@ -80,4 +78,3 @@ int main(int argc, char **argv)
 		ft_printf("Please, put the good PID or just enter three arguments");
 	return (0);
 }
-

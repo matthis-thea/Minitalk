@@ -6,16 +6,16 @@
 #    By: mthea <mthea@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/16 09:06:02 by mthea             #+#    #+#              #
-#    Updated: 2022/12/16 09:33:12 by mthea            ###   ########.fr        #
+#    Updated: 2022/12/16 10:51:57 by mthea            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 #-----------------VARIABLES------------------
 #--------------------------------------------
 # VARIABLES FOR DOT C
-SERVER		=	ft_server/server.c
+SERVER		=	ft_server/ft_server.c
 
-CLIENT		=	ft_client/client.c
+CLIENT		=	ft_client/ft_client.c
 
 FT_PRINTF	= ft_printf/ft_printf.c ft_printf/ft_void_percent.c ft_printf/ft_string_letters.c \
 				ft_printf/ft_numbers_base_ten.c ft_printf/ft_numbers_base_sixteen.c ft_printf/ft_external_functions.c \
@@ -39,6 +39,7 @@ EXEC_CLIENT	=	client
 
 RM = rm -rf
 
+#-----------------EXECUTING------------------
 #--------------------------------------------
 
 all : $(EXEC_SERVER) $(EXEC_CLIENT)
@@ -59,3 +60,4 @@ fclean :	clean
 re :	fclean all
 
 .PHONY :	all clean fclean re
+#--------------------------------------------
